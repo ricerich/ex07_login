@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvName, tvEmail;
+//    TextView tvName, tvEmail;
     Button button1;
 
     @Override
@@ -22,14 +22,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setTitle("사용자 정보 입력");
 
-        tvName = (TextView) findViewById(R.id.tvName);
-        tvEmail = (TextView) findViewById(R.id.tvEmail);
+//        tvName = (TextView) findViewById(R.id.tvName);
+//        tvEmail = (TextView) findViewById(R.id.tvEmail);
+
+        EditText edtName = (EditText) findViewById(R.id.edtName);
+        EditText edtEmail = (EditText) findViewById(R.id.edtEmail);
+
         button1 = (Button) findViewById(R.id.button1);
 
         //1.메인화면에서 버튼을 누르면, 다이얼로그 생성한다.
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
                 //1.다이얼로그 생성
                 AlertDialog.Builder dlg1 = new AlertDialog.Builder(MainActivity.this);
 
@@ -38,20 +45,29 @@ public class MainActivity extends AppCompatActivity {
 
                 View view1 = View.inflate(MainActivity.this, R.layout.dialog1,null);
 //                dlg1.setMessage("adfasf");
+                EditText edt1 = view1.findViewById(R.id.dlgEdt1);//이 위치로 옮김
+                EditText edt2 = view1.findViewById(R.id.dlgEdt2);
+
+                edt1.setText(edtName.getText().toString());//밑(main)에 값을 위(dialog)로 출력
+                edt2.setText(edtEmail.getText().toString());
+
                 dlg1.setView(view1);
 
                 dlg1.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        EditText edt1 = view1.findViewById(R.id.dlgEdt1);
-                        EditText edt2 = view1.findViewById(R.id.dlgEdt2);
+//                        EditText edt1 = view1.findViewById(R.id.dlgEdt1);//위치를 위쪽 옮김, 왜? 안보이니까
+//                        EditText edt2 = view1.findViewById(R.id.dlgEdt2);
 
                         String str1 = edt1.getText().toString();
                         String str2 = edt2.getText().toString();
 
-                        tvName.setText(str1);
-                        tvEmail.setText(str2);
+                        edtName.setText(str1);
+                        edtEmail.setText(str2);
+
+//                        tvName.setText(str1);
+//                        tvEmail.setText(str2);
                     }
                 });
 

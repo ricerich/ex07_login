@@ -5,18 +5,33 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
+<!--    <TextView-->
+<!--        android:id="@+id/tvName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="사용자 이름"-->
+<!--        android:textSize="20dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvEmail"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="이메일"-->
+<!--        android:textSize="20dp" />-->
+
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="사용자 이름"
+        android:hint="사용자 이름"
         android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/tvEmail"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="이메일"
+        android:hint="이메일"
         android:textSize="20dp" />
 
     <Button
